@@ -20,16 +20,21 @@ class MagicEight
       "My reply is no", 
       "My sources say no", 
       "Outlook not so good", 
-      "Very doubtful"]
+      "Very doubtful"].sample
   end
 
   def ask_user
-    puts "What is your question for the All-Knowing Magic Eight Ball:"
+    loop do
+    puts "What is your question for the All-Knowing Magic Eight Ball: (type 'quit' to exit)"
     user_input = gets.chomp.downcase
-    print @answer.sample
+    
     if user_input == "quit"
+      puts "Thank you for playing!  Have a nice day."
       exit
     end
+    puts get_answer
+
+  end
   end
 
 end
