@@ -1,7 +1,7 @@
 class MagicEight
 
   def get_answer
-    answers = ["It is certain", 
+    @answers = ["It is certain", 
       "It is decidedly so", 
       "Without a doubt", 
       "Yes definitely", 
@@ -23,6 +23,16 @@ class MagicEight
       "Very doubtful"]
   end
 
-
+  def ask_user
+    puts "What is your question for the All-Knowing Magic Eight Ball:"
+    user_input = gets.chomp.downcase
+    print @answer.sample
+    if user_input == "quit"
+      exit
+    end
+  end
 
 end
+
+play = MagicEight.new
+play.ask_user
